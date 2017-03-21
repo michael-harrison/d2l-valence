@@ -10,15 +10,18 @@ module D2L
 
       attr_reader :brightspace_host,
                   :app_id,
-                  :app_key
+                  :app_key,
+                  :api_version
 
       # @param [Valence::Host] brightspace_host Authenticating D2L Brightspace Instance
       # @param [String] app_id Application ID provided by your D2L admin
       # @param [String] app_key Application Key provided by your D2L admin
-      def initialize(brightspace_host:, app_id:, app_key:)
+      # @param [String] api_version Version of the Valence API is use
+      def initialize(brightspace_host:, app_id:, app_key:, api_version: '1.0')
         @brightspace_host = brightspace_host
         @app_id = app_id
         @app_key = app_key
+        @api_version = api_version
       end
 
       # Generates a URL for authentication
