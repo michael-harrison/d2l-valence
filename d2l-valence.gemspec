@@ -5,7 +5,7 @@ require 'd2l/valence/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "d2l-valence"
-  spec.version       = D2l::Valence::VERSION
+  spec.version       = D2L::Valence::VERSION
   spec.authors       = ['Michael Harrison']
   spec.email         = ['michael@ereserve.com.au']
   spec.summary       = %q{D2L Valence Learning Framework API client for Ruby}

@@ -1,4 +1,4 @@
-module D2l
+module D2L
   module Valence
     VERSION = "0.0.1"
   end
