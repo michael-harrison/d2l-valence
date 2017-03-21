@@ -26,10 +26,10 @@ module D2L
         @scheme = value
       end
 
-      def to_uri
+      def to_uri(path: nil, query: nil)
         {
-          http: URI::HTTP.build(host: host, port: port),
-          https: URI::HTTPS.build(host: host, port: port)
+          http: URI::HTTP.build(host: host, port: port, path: path, query: query),
+          https: URI::HTTPS.build(host: host, port: port, path: path, query: query)
         }[scheme]
       end
 
