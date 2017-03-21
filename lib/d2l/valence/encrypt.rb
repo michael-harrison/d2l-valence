@@ -8,16 +8,27 @@ module D2L
       # @param [String] key the key to encrypt with
       # @param [String] data data to encrypt and encode
       def self.encode(key, data)
-        remove_unwanted_chars Base64.encode64(compute_hash(key, data))
+        encode64(sign(key,data))
       end
 
       private
-      def self.remove_unwanted_chars(string)
-        string.gsub('=', '').gsub('+', '-').gsub('/', '_').strip
+      def self.sign(key, data)
+        OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha256'), key, data)
       end
 
-      def self.compute_hash(key, data)
-        OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha256'), key, data)
+      def self.encode64(digest)
+        Base64.urlsafe_encode64(digest, padding: false).strip
+      rescue
+        old_encode64 digest
+      end
+
+      # support for older versions of ruby
+      def self.old_encode64(digest)
+        remove_unwanted_chars Base64.encode64(digest).strip
+      end
+
+      def self.remove_unwanted_chars(string)
+        string.gsub('=', '').gsub('+', '-').gsub('/', '_').strip
       end
     end
   end
