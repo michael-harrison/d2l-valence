@@ -24,6 +24,13 @@ module D2L
         @tokens
       end
 
+      # Generates a timestamp with time skew between server and client taken into consideration
+      #
+      # @return [Integer] Server skew adjusted timestamp in seconds
+      def adjusted_timestamp
+        @adjusted_timestamp ||= ((Time.now.to_f * 1000).to_i - @user_context.server_skew_ms)/1000
+      end
+
       private
       def add_app_tokens
         @tokens[APP_ID_PARAM] = @app_context.app_id
@@ -45,14 +52,6 @@ module D2L
       def signature
         @signature ||= "#{@call.http_method}&#{CGI.unescape(@call.path).downcase}&#{adjusted_timestamp}"
       end
-
-      # Generates a timestamp with time skew between server and client taken into consideration
-      #
-      # @return [Integer] Server skew adjusted timestamp in seconds
-      def adjusted_timestamp
-        @adjusted_timestamp ||= ((Time.now.to_f * 1000).to_i - @user_context.server_skew_ms)/1000
-      end
-
     end
   end
 end
