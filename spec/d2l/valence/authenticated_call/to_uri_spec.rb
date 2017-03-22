@@ -72,8 +72,4 @@ describe D2L::Valence::AuthenticatedCall, type: :service do
       end
     end
   end
-
-  context '.execute' do
-
-  end
 end
