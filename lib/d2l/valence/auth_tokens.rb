@@ -27,14 +27,14 @@ module D2L
       private
       def add_app_tokens
         @tokens[APP_ID_PARAM] = @app_context.app_id
-        @tokens[SIGNATURE_BY_APP_KEY_PARAM] = Encrypt.encode(@app_context.app_key, signature)
+        @tokens[SIGNATURE_BY_APP_KEY_PARAM] = Encrypt.generate_from(@app_context.app_key, signature)
       end
 
       def add_user_tokens
         return if @user_context.user_id.nil?
 
         @tokens[USER_ID_PARAM] = @user_context.user_id
-        @tokens[SIGNATURE_BY_USER_KEY_PARAM] = Encrypt.encode(@user_context.user_key, signature)
+        @tokens[SIGNATURE_BY_USER_KEY_PARAM] = Encrypt.generate_from(@user_context.user_key, signature)
       end
 
       def add_timestamp_token

@@ -16,13 +16,14 @@ shared_context :common_context do
     [
       D2L::Valence::AuthTokens::APP_ID_PARAM,
       D2L::Valence::AuthTokens::SIGNATURE_BY_APP_KEY_PARAM,
+      D2L::Valence::AuthTokens::USER_ID_PARAM,
       D2L::Valence::AuthTokens::SIGNATURE_BY_USER_KEY_PARAM,
       D2L::Valence::AuthTokens::TIMESTAMP_PARAM
     ]
   end
 
   let(:callback_uri) { URI('https://apitesttool.desire2learnvalence.com/index.php') }
-  let(:auth_key) { D2L::Valence::Encrypt.encode(app_key, callback_uri.to_s) }
+  let(:auth_key) { D2L::Valence::Encrypt.generate_from(app_key, callback_uri.to_s) }
 
   let(:user_context) do
     D2L::Valence::UserContext.new(

@@ -40,7 +40,7 @@ module D2L
       def query_params_using(callback_url:)
         {
           APP_ID_PARAM => @app_id,
-          AUTH_KEY_PARAM => Encrypt.encode(@app_key, callback_url),
+          AUTH_KEY_PARAM => Encrypt.generate_from(@app_key, callback_url),
           CALLBACK_URL_PARAM => CGI.escape(callback_url)
         }.map { |p, v| "#{p}=#{v}" }.join('&')
 
