@@ -38,7 +38,9 @@ module D2L
       #
       # @return [D2L::Valence::Response] URI for the authenticated methof call
       def execute
+        RestClient.get(authenticated_uri.to_s) do |response, _request, _result|
 
+        end
       end
 
       # Generates the final path for the authenticated call
