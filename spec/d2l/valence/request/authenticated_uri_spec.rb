@@ -13,7 +13,7 @@ describe D2L::Valence::Request, type: :service do
     )
   end
 
-  context '.to_uri' do
+  context '.authenticated_uri' do
     context 'with no parameters' do
       let(:http_method) { 'GET' }
       let(:route) { '/d2l/api/lp/:version/users/whoami' }

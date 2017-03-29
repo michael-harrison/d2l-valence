@@ -14,12 +14,15 @@ describe D2L::Valence::Request, type: :service do
   end
 
   context '.execute' do
-    context ''
-    let(:api_version) { '1.1' }
-    let(:http_method) { 'GET' }
-    let(:route) { '/d2l/api/lp/:version/users/whoami' }
-    let(:route_params) { {} }
-    let(:query_params) { {} }
-    let(:expected_path) { "/d2l/api/lp/#{api_version}/users/whoami" }
+    context 'for GET' do
+      let(:api_version) { '1.1' }
+      let(:http_method) { 'GET' }
+      let(:route) { '/d2l/api/lp/:version/users/whoami' }
+      let(:route_params) { {} }
+      let(:query_params) { {} }
+      let(:expected_path) { "/d2l/api/lp/#{api_version}/users/whoami" }
+
+
+    end
   end
 end
