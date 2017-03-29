@@ -4,7 +4,9 @@ module D2L
     # Class for authenticated calls to the D2L Valence API
     class Request
       attr_reader :user_context,
-                  :http_method
+                  :http_method,
+                  :response
+
 
       #
       # == API routes
@@ -22,6 +24,8 @@ module D2L
         @route = route.downcase
         @route_params = route_params
         @query_params = query_params
+
+        raise "HTTP Method #{@http_method} is unsupported" unless %w(GET PUT POST DELETE).include? @http_method
       end
 
       # Generates an authenticated URI for a the Valence API method
@@ -38,9 +42,11 @@ module D2L
       #
       # @return [D2L::Valence::Response] URI for the authenticated methof call
       def execute
-        RestClient.get(authenticated_uri.to_s) do |response, _request, _result|
+        raise "HTTP Method #{@http_method} is not implemented" unless self.respond_to? @http_method.downcase
 
-        end
+        @response = self.send(@http_method.downcase)
+        @user_context.server_skew_ms = @response.server_skew
+        @response
       end
 
       # Generates the final path for the authenticated call
@@ -52,6 +58,12 @@ module D2L
         substitute_keys_with(known_params)
         substitute_keys_with(@route_params)
         @path = @route
+      end
+
+      def get
+        Response.new RestClient.get(authenticated_uri.to_s)
+      rescue RestClient::Exception => e
+        Response.new e.response
       end
 
       private

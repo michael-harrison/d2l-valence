@@ -2,6 +2,7 @@ require 'uri'
 require 'cgi'
 require 'base64'
 require 'openssl'
+require 'restclient'
 
 require 'd2l/valence/version'
 require 'd2l/valence/host'
