@@ -3,8 +3,9 @@ module D2L
     class UserContext
       attr_reader :app_context,
                   :user_id,
-                  :user_key,
-                  :server_skew_ms
+                  :user_key
+
+      attr_accessor :server_skew_ms
 
       # @param [D2L::Valence::AppContext] app_context
       def initialize(app_context:, user_id:, user_key:)
