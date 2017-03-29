@@ -10,6 +10,5 @@ describe D2L::Valence::AppContext, type: :service do
     it('will generate an authentication URL') do
       expect(subject.auth_url(callback_uri)).to eq expected_url
     end
-
   end
 end

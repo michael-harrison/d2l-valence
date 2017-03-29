@@ -1,8 +1,8 @@
 module D2L
   module Valence
-    # == AuthenticatedCall
+    # == Request
     # Class for authenticated calls to the D2L Valence API
-    class AuthenticatedCall
+    class Request
       attr_reader :user_context,
                   :http_method
 
@@ -26,15 +26,15 @@ module D2L
 
       # Generates an authenticated URI for a the Valence API method
       #
-      # @return [URI::Generic] URI for the authenticated methof call
-      def to_uri
+      # @return [URI::Generic] URI for the authenticated method call
+      def authenticated_uri
         @app_context.brightspace_host.to_uri(
           path: path,
           query: query
         )
       end
 
-      # Actions the authenticted call on the Valence API
+      # Sends the authenticated call on the Valence API
       #
       # @return [D2L::Valence::Response] URI for the authenticated methof call
       def execute
@@ -69,7 +69,7 @@ module D2L
       end
 
       def authenticated_tokens
-        D2L::Valence::AuthTokens.new(call: self).generate
+        D2L::Valence::AuthTokens.new(request: self).generate
       end
     end
   end

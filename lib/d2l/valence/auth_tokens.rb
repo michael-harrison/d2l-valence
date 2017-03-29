@@ -7,9 +7,9 @@ module D2L
       SIGNATURE_BY_USER_KEY_PARAM = 'x_d'.freeze
       TIMESTAMP_PARAM = 'x_t'.freeze
 
-      # @param [D2L::Valence::AuthenticatedCall] call the authenticated call that the auth tokens are for
-      def initialize(call:)
-        @call = call
+      # @param [D2L::Valence::Request] request the authenticated request that the auth tokens are for
+      def initialize(request:)
+        @call = request
         @user_context = @call.user_context
         @app_context = @user_context.app_context
       end

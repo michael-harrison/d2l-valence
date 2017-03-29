@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe D2L::Valence::AuthenticatedCall, type: :service do
+describe D2L::Valence::Request, type: :service do
   include_context :common_context
 
   subject do
@@ -21,9 +21,9 @@ describe D2L::Valence::AuthenticatedCall, type: :service do
       let(:query_params) { {} }
       let(:expected_path) { '/d2l/api/lp/1.0/users/whoami' }
 
-      its('to_uri.path') { is_expected.to eq expected_path }
+      its('authenticated_uri.path') { is_expected.to eq expected_path }
       it('will include the authentication query parameters') do
-        auth_token_parameters.each { |t| expect(subject.to_uri.query).to include "#{t}=" }
+        auth_token_parameters.each { |t| expect(subject.authenticated_uri.query).to include "#{t}=" }
       end
     end
 
@@ -35,7 +35,7 @@ describe D2L::Valence::AuthenticatedCall, type: :service do
       let(:query_params) { {} }
       let(:expected_path) { "/d2l/api/lp/#{api_version}/users/whoami" }
 
-      its('to_uri.path') { is_expected.to eq expected_path }
+      its('authenticated_uri.path') { is_expected.to eq expected_path }
     end
 
     context 'with route parameters' do
@@ -50,9 +50,9 @@ describe D2L::Valence::AuthenticatedCall, type: :service do
       let(:query_params) { {} }
       let(:expected_path) { "/d2l/api/lp/#{api_version}/#{route_params[:org_unit_id]}/groupcategories/#{route_params[:group_category_id]}" }
 
-      its('to_uri.path') { is_expected.to eq expected_path }
+      its('authenticated_uri.path') { is_expected.to eq expected_path }
       it('will include the authentication query parameters') do
-        auth_token_parameters.each { |t| expect(subject.to_uri.query).to include "#{t}=" }
+        auth_token_parameters.each { |t| expect(subject.authenticated_uri.query).to include "#{t}=" }
       end
     end
 
@@ -63,12 +63,12 @@ describe D2L::Valence::AuthenticatedCall, type: :service do
       let(:route_params) { {} }
       let(:expected_path) { "/d2l/api/lp/1.0/users/" }
 
-      its('to_uri.path') { is_expected.to eq expected_path }
+      its('authenticated_uri.path') { is_expected.to eq expected_path }
       it('will include the query params') do
-        query_params.each { |k,v| expect(subject.to_uri.query).to include "#{k}=#{v}" }
+        query_params.each { |k,v| expect(subject.authenticated_uri.query).to include "#{k}=#{v}" }
       end
       it('will include the authentication query parameters') do
-        auth_token_parameters.each { |t| expect(subject.to_uri.query).to include "#{t}=" }
+        auth_token_parameters.each { |t| expect(subject.authenticated_uri.query).to include "#{t}=" }
       end
     end
   end

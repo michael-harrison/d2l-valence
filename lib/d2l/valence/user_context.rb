@@ -40,7 +40,7 @@ module D2L
       # @param [Hash] query_params the query parameters for the method call
       # @return [D2L::Valence::RequestResult] returns a request
       def api_call(http_method:, route:, route_params:, query_params:)
-        AuthenticatedCall.new(
+        Request.new(
           user_context: self,
           http_method: http_method,
           route: route,

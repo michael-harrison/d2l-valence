@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe D2L::Valence::AuthenticatedCall, type: :service do
+describe D2L::Valence::Request, type: :service do
   include_context :common_context
 
   subject do

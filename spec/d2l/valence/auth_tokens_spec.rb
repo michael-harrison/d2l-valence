@@ -4,16 +4,16 @@ describe D2L::Valence::AuthTokens, type: :service do
   include_context :common_context
 
   context '.generate' do
-    subject { described_class.new(call: auth_call) }
-    let(:auth_call) do
-      D2L::Valence::AuthenticatedCall.new(
+    subject { described_class.new(request: request) }
+    let(:request) do
+      D2L::Valence::Request.new(
         user_context: user_context,
         http_method: 'GET',
         route: '/d2l/api/lp/:version/users/whoami'
       )
     end
 
-    let(:signature) { "#{auth_call.http_method}&#{CGI.unescape(auth_call.path)}&#{subject.adjusted_timestamp}" }
+    let(:signature) { "#{request.http_method}&#{CGI.unescape(request.path)}&#{subject.adjusted_timestamp}" }
     let(:signature_by_app_key) { D2L::Valence::Encrypt.generate_from(app_key, signature) }
     let(:signature_by_user_key) { D2L::Valence::Encrypt.generate_from(user_key, signature) }
     let(:tokens) { subject.generate }
