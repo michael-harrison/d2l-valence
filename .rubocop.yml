@@ -1,9 +1,13 @@
 AllCops:
   Include:
     - rubocop-rspec
-
+  Exclude:
+    - 'spec/**/*'
+    - '.idea/**/*'
+    - 'sandpit/**/*'
+    - 'Rakefile'
+  TargetRubyVersion: 2.3
 Metrics/LineLength:
   Max: 120
-
-AllCops:
-  TargetRubyVersion: 2.3.3
+Style/FrozenStringLiteralComment:
+  Enabled: false

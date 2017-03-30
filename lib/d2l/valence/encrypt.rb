@@ -11,7 +11,6 @@ module D2L
         encode(sign(key, data))
       end
 
-      private
       def self.sign(key, data)
         OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha256'), key, data)
       end
@@ -28,7 +27,7 @@ module D2L
       end
 
       def self.remove_unwanted_chars(string)
-        string.gsub('=', '').gsub('+', '-').gsub('/', '_').strip
+        string.delete('=').tr('+', '-').tr('/', '_').strip
       end
     end
   end

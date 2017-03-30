@@ -43,7 +43,6 @@ module D2L
           AUTH_KEY_PARAM => Encrypt.generate_from(@app_key, callback_url),
           CALLBACK_URL_PARAM => CGI.escape(callback_url)
         }.map { |p, v| "#{p}=#{v}" }.join('&')
-
       end
     end
   end

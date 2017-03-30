@@ -1,5 +1,7 @@
 module D2L
   module Valence
+    # == AuthTokens
+    # Class to generate authentication tokens for D2L Valance API calls
     class AuthTokens
       APP_ID_PARAM = 'x_a'.freeze
       USER_ID_PARAM = 'x_b'.freeze
@@ -28,10 +30,11 @@ module D2L
       #
       # @return [Integer] Server skew adjusted timestamp in seconds
       def adjusted_timestamp
-        @adjusted_timestamp ||= ((Time.now.to_f * 1000).to_i - @user_context.server_skew_ms)/1000
+        @adjusted_timestamp ||= ((Time.now.to_f * 1000).to_i - @user_context.server_skew_ms) / 1000
       end
 
       private
+
       def add_app_tokens
         @tokens[APP_ID_PARAM] = @app_context.app_id
         @tokens[SIGNATURE_BY_APP_KEY_PARAM] = Encrypt.generate_from(@app_context.app_key, signature)

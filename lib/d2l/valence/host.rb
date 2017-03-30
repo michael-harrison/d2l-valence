@@ -34,6 +34,7 @@ module D2L
       end
 
       private
+
       def supported_scheme?(value)
         [:http, :https].include? value
       end

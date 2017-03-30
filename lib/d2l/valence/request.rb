@@ -7,7 +7,6 @@ module D2L
                   :http_method,
                   :response
 
-
       #
       # == API routes
       # See D2L::Valence::UserContext.api_call for details on creating routes and route_params
@@ -42,9 +41,9 @@ module D2L
       #
       # @return [D2L::Valence::Response] URI for the authenticated methof call
       def execute
-        raise "HTTP Method #{@http_method} is not implemented" unless self.respond_to? @http_method.downcase
+        raise "HTTP Method #{@http_method} is not implemented" unless respond_to? @http_method.downcase
 
-        @response = self.send(@http_method.downcase)
+        @response = send(@http_method.downcase)
         @user_context.server_skew_ms = @response.server_skew
         @response
       end

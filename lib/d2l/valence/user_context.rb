@@ -1,5 +1,7 @@
 module D2L
   module Valence
+    # == UserContext
+    # Instances of this class are used to make D2L Valance API calls with the current user credentials
     class UserContext
       attr_reader :app_context,
                   :user_id,
