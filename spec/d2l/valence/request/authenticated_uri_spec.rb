@@ -40,15 +40,15 @@ describe D2L::Valence::Request, type: :service do
 
     context 'with route parameters' do
       let(:http_method) { 'GET' }
-      let(:route) { '/d2l/api/lp/:version/:org_unit_id/groupcategories/:group_category_id' }
+      let(:route) { '/d2l/api/lp/:version/:org_unit_id/groupcategories/:groupCategoryId' }
       let(:route_params) do
         {
           org_unit_id: 4,
-          group_category_id: 23,
+          groupCategoryId: 23,
         }
       end
       let(:query_params) { {} }
-      let(:expected_path) { "/d2l/api/lp/#{api_version}/#{route_params[:org_unit_id]}/groupcategories/#{route_params[:group_category_id]}" }
+      let(:expected_path) { "/d2l/api/lp/#{api_version}/#{route_params[:org_unit_id]}/groupcategories/#{route_params[:groupCategoryId]}" }
 
       its('authenticated_uri.path') { is_expected.to eq expected_path }
       it('will include the authentication query parameters') do

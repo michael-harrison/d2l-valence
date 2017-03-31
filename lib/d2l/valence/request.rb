@@ -20,7 +20,7 @@ module D2L
         @user_context = user_context
         @app_context = user_context.app_context
         @http_method = http_method.upcase
-        @route = route.downcase
+        @route = route
         @route_params = route_params
         @query_params = query_params
 
