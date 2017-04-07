@@ -11,6 +11,21 @@ module D2L
         @server_skew = 0
       end
 
+      # @return [String] Plain text response from the D2L server
+      def body
+        @http_response.body
+      end
+
+      # Generates a hash based on a valid JSON response from the D2L server.  If the provided response is not in a
+      # value JSON format then an empty hash is returned
+      #
+      # @return [Hash] hash based on JSON body
+      def to_hash
+        @to_hash ||= JSON.parse(body)
+      rescue
+        @to_hash = {}
+      end
+
       # @return [Symbol] the interpreted code for the Valance API response
       def code
         interpret_forbidden || http_code

@@ -36,20 +36,24 @@ describe D2L::Valence::Request, type: :service do
       end
     end
 
-    context 'for GET', vcr: {cassette_name: 'request/execute/get'} do
+    context 'for whoami', vcr: {cassette_name: 'request/execute/get_whoami'} do
       let(:http_method) { 'GET' }
       let(:route) { '/d2l/api/lp/:version/users/whoami' }
       let(:route_params) { {} }
       let(:query_params) { {} }
-      let(:expected_path) { "/d2l/api/lp/#{api_version}/users/whoami" }
+      let(:response) { subject.execute }
 
       before do
-        Timecop.freeze DateTime.new(2017, 3, 29, 9, 19, 39)
+        Timecop.freeze DateTime.new(2017, 4, 7, 3, 57, 29)
       end
 
       after { Timecop.return }
 
       its(:execute) { is_expected.to be_a D2L::Valence::Response }
+      it 'will return the version information' do
+        expect(response.to_hash['ProfileIdentifier']).to_not be_nil
+        expect(response.code).to eq :HTTP_200
+      end
     end
   end
 end
