@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://partners.brightspace.com/d2l/api/le/1.15/lti/link/8041/144648?x_a=Vi9NYNbK-l3LcL9LvpI3yg&x_b=CPSmljBdJ4ewuE6NlePYWP&x_c=rS61SlaN_ZLOBlaSwzAqhhfxxjr-eNVC1CS3sCpRF3Y&x_d=eNlDAt7InkkCTfWn-5dixPsryoWjXU8pyyakmVbMKao&x_t=1491547536
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.1.0 x86_64) ruby/2.3.3p222
+      Host:
+      - partners.brightspace.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Expires:
+      - "-1"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/7.5
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,Content-Length,Content-Type,Accept-Ranges,Content-Range,Date
+      X-Powered-By:
+      - ASP.NET
+      X-Xss-Protection:
+      - '0'
+      Date:
+      - Fri, 07 Apr 2017 06:45:37 GMT
+      Content-Length:
+      - '416'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
+        kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
+        AWz2zkrayZ4hgKrIHz9+fB8/In7xR181+ZuqKl/W1WUxy+vX+XRdF+3167xt
+        i+VF89Gjtl7no4+et8XzYvn2bPbRo939/U/3D0YffVlffLUsWnx0sLO/O/ro
+        TdGW+UePPnr+5ixF449GH31Vl/TBvG1Xj+7eXVxnq1VZTLO2qJbjabW421LP
+        d8tsvZzOqfHTvJnWxQrf0kuAkJ5XdZq/a/N6mZUpWlOz3yu/pq/3dnbv7+7v
+        7j18sLdzQJ+eNT9ZNMUECJxnZUMovy4ull/kTZNd0GcyCnz03aKdv5naT/Ll
+        7M30bHleuffoo5Nq2VK/vc+JWjUG3PnoRbagPjofni6ygkbvfYohKZE6nwZD
+        9757uvccoHrw6XMi/9P8vFjmsw5C8t2rqsy9L07WTVstXmY1QSJy0rx+7/u/
+        5P8BCZdPIP4BAAA=
+    http_version: 
+  recorded_at: Fri, 07 Apr 2017 06:45:37 GMT
+recorded_with: VCR 3.0.3
