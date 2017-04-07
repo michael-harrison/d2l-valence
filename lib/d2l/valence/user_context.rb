@@ -7,14 +7,14 @@ module D2L
                   :user_id,
                   :user_key
 
-      attr_accessor :server_skew_ms
+      attr_accessor :server_skew # in seconds
 
       # @param [D2L::Valence::AppContext] app_context
       def initialize(app_context:, user_id:, user_key:)
         @app_context = app_context
         @user_id = user_id
         @user_key = user_key
-        @server_skew_ms = 0
+        @server_skew = 0
       end
 
       # Calls a API method on the Valance API
@@ -43,7 +43,7 @@ module D2L
       # @param [Hash] query_params the query parameters for the method call
       # @return [D2L::Valence::RequestResult] returns a request
       def api_call(http_method:, route:, route_params:, query_params:)
-        Request.new(
+        D2L::Valence::Request.new(
           user_context: self,
           http_method: http_method,
           route: route,

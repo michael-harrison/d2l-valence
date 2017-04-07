@@ -9,33 +9,33 @@ module D2L
         @error_message = error_message
       end
 
-      # @return [Integer] difference in D2L Server timestamp in milliseconds
+      # @return [Integer] difference in D2L Server timestamp in seconds
       def server_skew
-        return 0 if server_timestamp.nil?
+        return 0 if server_time_in_seconds.nil?
 
-        @server_skew ||= server_timestamp - now_in_ms
+        @server_skew ||= server_time_in_seconds - now_in_seconds
       end
 
       # @return [Integer] true if our timestamp is out of range with the D2L Server
       def timestamp_out_of_range?
-        server_timestamp != nil
+        server_time_in_seconds != nil
       end
 
       private
 
       # @return [Integer] D2L Server timestamp
-      def server_timestamp
+      def server_time_in_seconds
         @server_timestamp ||= parse_timestamp
       end
 
-      # @return [Integer] local timestamp now in milliseconds
-      def now_in_ms
-        (Time.now.to_f * 1000).to_i
+      # @return [Integer] local timestamp now in seconds
+      def now_in_seconds
+        Time.now.to_f.to_i
       end
 
       def parse_timestamp
         match = Regexp.new(/Timestamp out of range\s*(\d+)/).match(@error_message)
-        match[1].to_i * 1000 if !match.nil? && match.length >= 2
+        match[1].to_i if !match.nil? && match.length >= 2
       end
     end
   end

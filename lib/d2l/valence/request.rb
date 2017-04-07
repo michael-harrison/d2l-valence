@@ -44,7 +44,7 @@ module D2L
         raise "HTTP Method #{@http_method} is not implemented" unless respond_to? @http_method.downcase
 
         @response = send(@http_method.downcase)
-        @user_context.server_skew_ms = @response.server_skew
+        @user_context.server_skew = @response.server_skew
         @response
       end
 
@@ -65,6 +65,12 @@ module D2L
         Response.new e.response
       end
 
+      def post
+        Response.new RestClient.post(authenticated_uri.to_s, @query_params.to_json, content_type: :json)
+      rescue RestClient::Exception => e
+        Response.new e.response
+      end
+
       private
 
       def substitute_keys_with(params)
@@ -78,7 +84,13 @@ module D2L
       end
 
       def query
-        @query_params.merge(authenticated_tokens).map { |k, v| "#{k}=#{v}" }.join('&')
+        return to_query_params(authenticated_tokens) unless @http_method == 'GET'
+
+        to_query_params@query_params.merge(authenticated_tokens)
+      end
+
+      def to_query_params(hash)
+        hash.map { |k, v| "#{k}=#{v}" }.join('&')
       end
 
       def authenticated_tokens

@@ -30,7 +30,7 @@ module D2L
       #
       # @return [Integer] Server skew adjusted timestamp in seconds
       def adjusted_timestamp
-        @adjusted_timestamp ||= ((Time.now.to_f * 1000).to_i - @user_context.server_skew_ms) / 1000
+        @adjusted_timestamp ||= Time.now.to_f.to_i + @user_context.server_skew
       end
 
       private
