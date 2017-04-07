@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://partners.brightspace.com/d2l/api/versions/?x_a=Vi9NYNbK-l3LcL9LvpI3yg&x_b=CPSmljBdJ4ewuE6NlePYWP&x_c=VwcZFaHrVRJFcAsmwjp2JsYt6X4VfpRLKfIYQC4rXTU&x_d=MfKB85PcjdQpvHPVqlMFTaTYnyizBM3FOUGPTQoylcw&x_t=1491536799
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.1.0 x86_64) ruby/2.3.3p222
+      Host:
+      - partners.brightspace.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Expires:
+      - "-1"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/7.5
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,Content-Length,Content-Type,Accept-Ranges,Content-Range,Date
+      X-Powered-By:
+      - ASP.NET
+      X-Xss-Protection:
+      - '0'
+      Date:
+      - Fri, 07 Apr 2017 03:46:40 GMT
+      Content-Length:
+      - '423'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
+        kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
+        AWz2zkrayZ4hgKrIHz9+fB8/Ir73iz96WVez9bQ9qWb5R48+mmTNR6OPnmdt
+        3rQ/mddNUS3p093xDn36er1aVXWbz/SL5qNH3+Ovvv9LRl04T4rlLK9PqmWb
+        L1t698MhTtdNWy2KH2QtNaR3+xD36NNBiCP6d5f/3bsR+u8/rdZ1k0/qbDkr
+        lhfZqqAX+/0B3A393djTIluV+Ztjat6HDyCD8COQ8xW90AWzN75Pn0bB7BGY
+        Ef2LcewRWfDvPf53n/+9H+3kXXw68WK0F3wVgVPm9EIfzN4GOMAWRMW/wBaQ
+        8S+w3SVs8e+n/O8D/veA/33I/+7qy/L2rry+K+/vCoBdgbArIHYFxq4A2RUo
+        ewJlT6DsCRRCOTa+2GQQIHTycza+CJ7PX9GXfTwB4FZoRkCW7XvLS1RS6jgJ
+        MZoBMPsE5vv/D1S2+z7UBAAA
+    http_version: 
+  recorded_at: Fri, 07 Apr 2017 03:46:40 GMT
+recorded_with: VCR 3.0.3
