@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partners.brightspace.com/d2l/api/le/1.15/lti/link/8041?x_a=Vi9NYNbK-l3LcL9LvpI3yg&x_b=CPSmljBdJ4ewuE6NlePYWP&x_c=6dmLZYwVh202x5_N3ffVGSXzxk5EBid8jk8PIymFdIw&x_d=7Zt0kK6-33yqvw4aD_-zOveTin7nJcWBJFmjeAmmWxA&x_t=1491780043
+    body:
+      encoding: UTF-8
+      string: '{"Title":"The wrong title","Url":"http://myapplication.com/tool/launch","Description":"Link
+        for external tool","Key":"2015141297208","PlainSecret":"a30be7c3550149b7a7daac3065f0e5e5","IsVisible":false,"SignMessage":true,"SignWithTc":true,"SendTcInfo":true,"SendContextInfo":true,"SendUserId":true,"SendUserName":true,"SendUserEmail":true,"SendLinkTitle":true,"SendLinkDescription":true,"SendD2LUserName":true,"SendD2LOrgDefinedId":true,"SendD2LOrgRoleId":true,"UseToolProviderSecuritySettings":true,"CustomParameters":null}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.1.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '522'
+      Host:
+      - partners.brightspace.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Expires:
+      - "-1"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/7.5
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,Content-Length,Content-Type,Accept-Ranges,Content-Range,Date
+      X-Powered-By:
+      - ASP.NET
+      X-Xss-Protection:
+      - '0'
+      Date:
+      - Sun, 09 Apr 2017 23:20:44 GMT
+      Content-Length:
+      - '422'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
+        kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
+        AWz2zkrayZ4hgKrIHz9+fB8/In7xR181+ZuqKl/W1WUxy+vX+XRdF+3167xt
+        i+VF89Gjtl7no4+et8XzYvn2bPbRo939/U8/3Rl99GV98dWyaPHRwc7+7uij
+        N0Vb5h89+ujNPE+v6mp5kbb8yeijr+qSPp+37erR3buL62y1Kotp1hbVcjyt
+        FndbQuBuma2X0zk1fpo307pY4Vt6Cb2m51Wd5u/avF5mZYrW1Oz3yq/p672d
+        3fu7+7t7Dx/s7RzQp2fNTxZNMaFeH51nZUOYvy4ull/kTZNd0GcyGHz03aKd
+        v5naT/Ll7M30bHleuffoo5Nq2VK/vc+JaDXG3fnoRbagPjofni6ygkbvfYoh
+        Ka06nwZD9757uvccoHrw6XOahaf5ebHMZx2E5LtXVZl7X5ysm7ZavMxqgkTk
+        pOn93vd/yf8DPqSTbQUCAAA=
+    http_version: 
+  recorded_at: Sun, 09 Apr 2017 23:20:44 GMT
+- request:
+    method: put
+    uri: https://partners.brightspace.com/d2l/api/le/1.15/lti/link/144660?x_a=Vi9NYNbK-l3LcL9LvpI3yg&x_b=CPSmljBdJ4ewuE6NlePYWP&x_c=zxmRUdYYtvUOsgABS6bzgGbp3Y0hq8r9bJglzXpe0TE&x_d=M-XVTSWWtfw-CfP25yO55PxT8_CcEEalYf5492VyPgg&x_t=1491780044
+    body:
+      encoding: UTF-8
+      string: '{"Title":"LTI Link","Url":"http://myapplication.com/tool/launch","Description":"Link
+        for external tool","Key":"2015141297208","PlainSecret":"a30be7c3550149b7a7daac3065f0e5e5","IsVisible":false,"SignMessage":true,"SignWithTc":true,"SendTcInfo":true,"SendContextInfo":true,"SendUserId":true,"SendUserName":true,"SendUserEmail":true,"SendLinkTitle":true,"SendLinkDescription":true,"SendD2LUserName":true,"SendD2LOrgDefinedId":true,"SendD2LOrgRoleId":true,"UseToolProviderSecuritySettings":true,"CustomParameters":null}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.1.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '515'
+      Host:
+      - partners.brightspace.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Expires:
+      - "-1"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/7.5
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,Content-Length,Content-Type,Accept-Ranges,Content-Range,Date
+      X-Powered-By:
+      - ASP.NET
+      X-Xss-Protection:
+      - '0'
+      Date:
+      - Sun, 09 Apr 2017 23:20:45 GMT
+      Content-Length:
+      - '416'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
+        kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
+        AWz2zkrayZ4hgKrIHz9+fB8/In7xR181+ZuqKl/W1WUxy+vX+XRdF+3167xt
+        i+VF89Gjtl7no4+et8XzYvn2bPbRo939/U8/3Rl99GV98dWyaPHRwc7+7uij
+        N0Vb5h89+uj5m7MUjT8affRVXdIH87ZdPbp7d3GdrVZlMc3aolqOp9Xibks9
+        3y2z9XI6p8ZP82ZaFyt8Sy8BQnpe1Wn+rs3rZVamaE3Nfq/8mr7e29m9v7u/
+        u/fwwd7OAX161vxk0RQTIHCelQ2h/Lq4WH6RN012QZ/JKPDRd4t2/mZqP8mX
+        szfTs+V55d6jj06qZUv99j4natUYcOejF9mC+uh8eLrIChq99ymGpETqfBoM
+        3fvu6d5zgOrBp8+J/E/z82KZzzoIyXevqjL3vjhZN221eJnVBInISfP6ve//
+        kv8HovGkDP4BAAA=
+    http_version: 
+  recorded_at: Sun, 09 Apr 2017 23:20:45 GMT
+recorded_with: VCR 3.0.3
