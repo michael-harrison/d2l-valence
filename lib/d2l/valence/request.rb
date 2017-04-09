@@ -71,6 +71,12 @@ module D2L
         Response.new e.response
       end
 
+      def delete
+        Response.new RestClient.delete(authenticated_uri.to_s, content_type: :json)
+      rescue RestClient::Exception => e
+        Response.new e.response
+      end
+
       private
 
       def substitute_keys_with(params)
@@ -86,7 +92,7 @@ module D2L
       def query
         return to_query_params(authenticated_tokens) unless @http_method == 'GET'
 
-        to_query_params@query_params.merge(authenticated_tokens)
+        to_query_params @query_params.merge(authenticated_tokens)
       end
 
       def to_query_params(hash)
