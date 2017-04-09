@@ -71,6 +71,12 @@ module D2L
         Response.new e.response
       end
 
+      def put
+        Response.new RestClient.put(authenticated_uri.to_s, @query_params.to_json, content_type: :json)
+      rescue RestClient::Exception => e
+        Response.new e.response
+      end
+
       def delete
         Response.new RestClient.delete(authenticated_uri.to_s, content_type: :json)
       rescue RestClient::Exception => e
