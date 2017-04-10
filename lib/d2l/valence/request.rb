@@ -54,8 +54,8 @@ module D2L
       def path
         return @path unless @path.nil?
 
-        substitute_keys_with(known_params)
         substitute_keys_with(@route_params)
+        substitute_keys_with(known_params)
         @path = @route
       end
 
