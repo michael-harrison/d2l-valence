@@ -41,9 +41,9 @@ module D2L
       #
       # @return [D2L::Valence::Response] URI for the authenticated methof call
       def execute
-        raise "HTTP Method #{@http_method} is not implemented" unless respond_to? @http_method.downcase
+        raise "HTTP Method #{@http_method} is not implemented" if params.nil?
 
-        @response = send(@http_method.downcase)
+        @response = execute_call
         @user_context.server_skew = @response.server_skew
         @response
       end
@@ -59,31 +59,22 @@ module D2L
         @path = @route
       end
 
-      def get
-        Response.new RestClient.get(authenticated_uri.to_s)
-      rescue RestClient::Exception => e
-        Response.new e.response
-      end
-
-      def post
-        Response.new RestClient.post(authenticated_uri.to_s, @query_params.to_json, content_type: :json)
-      rescue RestClient::Exception => e
-        Response.new e.response
-      end
-
-      def put
-        Response.new RestClient.put(authenticated_uri.to_s, @query_params.to_json, content_type: :json)
-      rescue RestClient::Exception => e
-        Response.new e.response
-      end
-
-      def delete
-        Response.new RestClient.delete(authenticated_uri.to_s, content_type: :json)
-      rescue RestClient::Exception => e
-        Response.new e.response
-      end
-
       private
+
+      def execute_call
+        Response.new RestClient.send(@http_method.downcase, *params)
+      rescue RestClient::Exception => e
+        Response.new e.response
+      end
+
+      def params
+        {
+          'GET' => [authenticated_uri.to_s],
+          'POST' => [authenticated_uri.to_s, @query_params.to_json, content_type: :json],
+          'PUT' => [authenticated_uri.to_s, @query_params.to_json, content_type: :json],
+          'DELETE' => [authenticated_uri.to_s, content_type: :json]
+        }[@http_method]
+      end
 
       def substitute_keys_with(params)
         params.each { |param, value| @route.gsub!(":#{param}", value.to_s) }
