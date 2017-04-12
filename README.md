@@ -204,11 +204,11 @@ that will appear with the right conditions.
 
 ##### :INVALID_TIMESTAMP  
 This response code identifies that there is enough of a difference between your local server time and the D2L Server 
-time.  For developers this is hard to have changed so we provided a mechanism where by the failure can be rectified at
-the application level.  In the design of the gem there is detection of time skew between the client and server.  This is 
-compensated for automatically.  Should your request get this failure then all you need do is execute your request a second 
-time and the gem will take the skew into consideration when creating the necessary authentication tokens.  Following is
-an example of handling the response:
+time to be a problem.  For developers this is hard to have changed so we provided a mechanism where by the failure can 
+be rectified at the application level.  In the design of the gem there is detection of time skew between the client and
+server.  This is compensated for automatically.  Should your request get this failure then all you need do is execute 
+your request a second time and the gem will take the skew into consideration when creating the necessary authentication 
+tokens.  Following is an example of handling the response:
 
 ```ruby
 request = D2L::Valence::Request.new(
@@ -234,3 +234,33 @@ be a combination of incorrect App ID/Key and/or User ID/Key.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+### Testing notes  
+Given the use of timestamps in the the URL it does mean that any tests that have recorded HTTP traffic via [VCR](https://github.com/vcr/vcr) 
+need to use [Timecop](https://github.com/travisjeffery/timecop).  In some cases the calls will need to wrapped with a 
+Timecop block:
+
+```ruby
+Timecop.freeze Time.at(1491780043) do
+  # Your HTTP Calls
+end
+```
+
+But for the majority of the tests it just a matter of adding a `before` and `after`:
+
+```ruby
+before { Timecop.freeze Time.at(1491547536) }
+after { Timecop.return }
+```
+
+In order to do PRs with passing tests you'll need to use your own temporary App ID, App Key, User ID and User Key as I've
+done with these tests.  For convenience the tests uses environment variables:
+ 
+```ruby
+let(:app_id) { ENV['D2L_API_ID'] }
+let(:app_key) { ENV['D2L_API_KEY'] }
+let(:user_id) { ENV['D2L_USER_ID'] }
+let(:user_key) { ENV['D2L_USER_KEY'] }
+```
+
+It is a merry dance but the only reliable way to have real testing against a real API.
