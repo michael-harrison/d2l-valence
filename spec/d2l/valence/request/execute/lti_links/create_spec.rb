@@ -41,7 +41,7 @@ describe D2L::Valence::Request, type: :service do
           SendD2LUserName: true,
           SendD2LOrgDefinedId: true,
           SendD2LOrgRoleId: true,
-          UseToolProviderSecuritySettings: true,
+          UseToolProviderSecuritySettings: false,
           CustomParameters: nil
         }
       end
@@ -49,15 +49,16 @@ describe D2L::Valence::Request, type: :service do
       let(:response) { subject.execute }
 
       before do
-        Timecop.freeze Time.at(1491547058)
+        Timecop.freeze Time.at(1491960645)
       end
 
       after { Timecop.return }
 
       it 'will return the version information' do
         expect(response.to_hash['LtiLinkId']).to_not be_nil
-        # TODO: When D2L get back to us about the "Send..." attributes all being false we can do the test below
-        # query_params.each { |k, v| expect("#{k}: #{response.to_hash[k.to_s]}").to eq "#{k}: #{v}" if k != :PlainSecret }
+        query_params.each do |k, v|
+          expect("#{k}: #{response.to_hash[k.to_s]}").to eq "#{k}: #{v}" if not [:PlainSecret, :CustomParameters].include? k
+        end
         expect(response.code).to eq :HTTP_200
       end
     end

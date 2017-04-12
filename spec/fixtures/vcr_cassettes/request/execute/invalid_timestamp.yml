@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://partners.brightspace.com/d2l/api/lp/1.15/users/whoami?x_a=Vi9NYNbK-l3LcL9LvpI3yg&x_b=CPSmljBdJ4ewuE6NlePYWP&x_c=WEqKSgdDdoEaIR8WR6aggN5WOlUG9HHilx8OCDSRjnE&x_d=8Xy7oNRTnCZkcdT1HKv4xBZqY_nNsezsXXRooMhKPgo&x_t=1491539926
+    uri: https://partners.brightspace.com/d2l/api/lp/1.15/users/whoami?x_a=api_id&x_b=user_id&x_c=jzb6idkFNA49R1dfGqUaT16dyhCsbewWy4pwBfl0UUI&x_d=OwRg_VcnY2xw-keVNs7SjBaw_xe5h3nnukj4tFwICRw&x_t=1491940559
     body:
       encoding: US-ASCII
       string: ''
@@ -43,17 +43,17 @@ http_interactions:
       X-Xss-Protection:
       - '0'
       Date:
-      - Fri, 07 Apr 2017 05:38:47 GMT
+      - Wed, 12 Apr 2017 01:29:20 GMT
     body:
       encoding: UTF-8
       string: |-
         Timestamp out of range
-        1491543527
+        1491960561
     http_version: 
-  recorded_at: Fri, 07 Apr 2017 04:38:48 GMT
+  recorded_at: Tue, 11 Apr 2017 19:56:01 GMT
 - request:
     method: get
-    uri: https://partners.brightspace.com/d2l/api/lp/1.15/users/whoami?x_a=Vi9NYNbK-l3LcL9LvpI3yg&x_b=CPSmljBdJ4ewuE6NlePYWP&x_c=X3wyQgj7ZWUc9L9_T8qJFc0-yHfFkU_qtQXTTNNrszk&x_d=QzsYaWDvYAe6ldmwzyGuVM_6vfXThMlwkfwXr5dKYbQ&x_t=1491543527
+    uri: https://partners.brightspace.com/d2l/api/lp/1.15/users/whoami?x_a=api_id&x_b=user_id&x_c=VsD8Qz3x8BSbHUGfgWeOKA-ozx1irUm09upkVOBBm8g&x_d=WR2B8Lu0DZGLXzjH9jEp877-jo9_yWTTBRHVf0iKzjs&x_t=1491960561
     body:
       encoding: US-ASCII
       string: ''
@@ -96,7 +96,7 @@ http_interactions:
       X-Xss-Protection:
       - '0'
       Date:
-      - Fri, 07 Apr 2017 05:38:49 GMT
+      - Wed, 12 Apr 2017 01:29:21 GMT
       Content-Length:
       - '212'
     body:
@@ -108,5 +108,5 @@ http_interactions:
         fZEtcvoof5U3eX2Z79LnzzP78fFsUSyLpq2ztqrpq6+WxS9a5/qleWd8jLde
         1tV5UeZBR1/+ou8eP314/+H+T330S/4fwzWHaYQAAAA=
     http_version: 
-  recorded_at: Fri, 07 Apr 2017 04:38:49 GMT
+  recorded_at: Tue, 11 Apr 2017 19:56:02 GMT
 recorded_with: VCR 3.0.3

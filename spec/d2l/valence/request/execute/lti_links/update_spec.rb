@@ -20,7 +20,7 @@ describe D2L::Valence::Request, type: :service do
     context 'for PUT with an lti link', vcr: {cassette_name: 'request/execute/put_lti_link'} do
       let(:incorrect_details) { query_params.dup.merge(Title: 'The wrong title') }
       let!(:existing_lit_link) do
-        Timecop.freeze Time.at(1491780043) do
+        Timecop.freeze Time.at(1491961066) do
           D2L::Valence::Request.new(
             user_context: user_context,
             http_method: 'POST',
@@ -59,7 +59,7 @@ describe D2L::Valence::Request, type: :service do
       end
       let(:api_version) { '1.15' }
       let(:response) do
-        Timecop.freeze Time.at(1491780044) do
+        Timecop.freeze Time.at(1491961067) do
           subject.execute
         end
       end

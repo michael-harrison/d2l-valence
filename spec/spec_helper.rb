@@ -13,4 +13,8 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.allow_http_connections_when_no_cassette = true
+  c.filter_sensitive_data('api_id') { ENV['D2L_API_ID'] }
+  c.filter_sensitive_data('api_key') { ENV['D2L_API_KEY'] }
+  c.filter_sensitive_data('user_id') { ENV['D2L_USER_ID'] }
+  c.filter_sensitive_data('user_id') { ENV['D2L_USER_KEY'] }
 end

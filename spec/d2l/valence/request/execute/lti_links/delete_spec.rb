@@ -20,13 +20,13 @@ describe D2L::Valence::Request, type: :service do
     context 'for DELETE an lti link', vcr: {cassette_name: 'request/execute/delete_lti_link'} do
       let(:http_method) { 'DELETE' }
       let(:route) { '/d2l/api/le/:version/lti/link/:ltiLinkId' }
-      let(:route_params) { {ltiLinkId: 144648} }
+      let(:route_params) { {ltiLinkId: 144931} }
       let(:query_params) { {} }
       let(:api_version) { '1.15' }
       let(:response) { subject.execute }
 
       before do
-        Timecop.freeze Time.at(1491778588)
+        Timecop.freeze Time.at(1491960880)
       end
 
       after { Timecop.return }

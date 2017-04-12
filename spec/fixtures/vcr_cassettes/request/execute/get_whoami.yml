@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://partners.brightspace.com/d2l/api/lp/1.0/users/whoami?x_a=Vi9NYNbK-l3LcL9LvpI3yg&x_b=CPSmljBdJ4ewuE6NlePYWP&x_c=7IoOD250IWR5msQNliFhzqcszWzoS97VBLF42AZdbr0&x_d=cbFMjYpQGSYnn1A-pr1T7RqnblZNChj9H0o6t_LffDQ&x_t=1491537449
+    uri: https://partners.brightspace.com/d2l/api/lp/1.0/users/whoami?x_a=api_id&x_b=user_id&x_c=hTF_WsN31LFqnT1VJkMeSFiW9V-THxKLje7FaHZi0jw&x_d=qtomVAPrzeMWAshx5J_bC2N5_Cl1DKX4N7vML2r9Srg&x_t=1491960098
     body:
       encoding: US-ASCII
       string: ''
@@ -45,7 +45,7 @@ http_interactions:
       X-Xss-Protection:
       - '0'
       Date:
-      - Fri, 07 Apr 2017 03:57:30 GMT
+      - Wed, 12 Apr 2017 01:21:39 GMT
       Content-Length:
       - '212'
     body:
@@ -57,5 +57,5 @@ http_interactions:
         fZEtcvoof5U3eX2Z79LnzzP78fFsUSyLpq2ztqrpq6+WxS9a5/qleWd8jLde
         1tV5UeZBR1/+ou8eP314/+H+T330S/4fwzWHaYQAAAA=
     http_version: 
-  recorded_at: Fri, 07 Apr 2017 03:57:30 GMT
+  recorded_at: Wed, 12 Apr 2017 01:21:40 GMT
 recorded_with: VCR 3.0.3

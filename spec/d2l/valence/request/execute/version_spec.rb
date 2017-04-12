@@ -16,7 +16,7 @@ describe D2L::Valence::Request, type: :service do
   context '.execute' do
     let(:user_id) { ENV['D2L_USER_ID'] }
     let(:user_key) { ENV['D2L_USER_KEY'] }
-    
+
     context 'for GET version', vcr: {cassette_name: 'request/execute/get_version'} do
       let(:http_method) { 'GET' }
       let(:route) { '/d2l/api/versions/' }
@@ -26,7 +26,7 @@ describe D2L::Valence::Request, type: :service do
       let(:response) { subject.execute }
 
       before do
-        Timecop.freeze DateTime.new(2017, 4, 7, 3, 46, 39)
+        Timecop.freeze Time.at(1491960243)
       end
 
       after { Timecop.return }

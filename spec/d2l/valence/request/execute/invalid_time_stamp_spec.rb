@@ -23,7 +23,9 @@ describe D2L::Valence::Request, type: :service do
       let(:route_params) { {} }
       let(:query_params) { {} }
       let(:api_version) { '1.15' }
-      let(:skewed_start_time) { Time.at(1491539926) }
+      let(:skewed_start_time) { Time.at(1491940559) }
+      # NB: The commented line below is the needed for the regeneration of VCR cassettes
+      # let(:skewed_start_time) { Time.at(Time.now.to_i - 20000) }
 
       context 'on second try', vcr: {cassette_name: 'request/execute/invalid_timestamp'} do
         it 'will succeed' do

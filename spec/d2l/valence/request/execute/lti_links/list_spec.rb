@@ -26,7 +26,7 @@ describe D2L::Valence::Request, type: :service do
       let(:response) { subject.execute }
 
       before do
-        Timecop.freeze Time.at(1491546269)
+        Timecop.freeze Time.at(1491960964)
       end
 
       after { Timecop.return }

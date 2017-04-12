@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: https://partners.brightspace.com/d2l/api/le/1.15/lti/link/8041?x_a=Vi9NYNbK-l3LcL9LvpI3yg&x_b=CPSmljBdJ4ewuE6NlePYWP&x_c=mRPE33CJ6CHMNWWDh5PSmD4h9xxx7UgUYheMuOnrAEg&x_d=sfnKootkCCRy4jSVNBV761TuFZOhMmK0t45A4OtRMzs&x_t=1491547058
+    uri: https://partners.brightspace.com/d2l/api/le/1.15/lti/link/8041?x_a=api_id&x_b=user_id&x_c=sKj4auxOs9ytAueL8bo8_Efju72WweaW95sUJnamHsw&x_d=6N_bgR4f91ZOFhejxEYESy1oexgtChOxFsGiIRcNUaQ&x_t=1491960645
     body:
       encoding: UTF-8
       string: '{"Title":"LTI Link","Url":"http://myapplication.com/tool/launch","Description":"Link
-        for external tool","Key":"2015141297208","PlainSecret":"a30be7c3550149b7a7daac3065f0e5e5","IsVisible":false,"SignMessage":true,"SignWithTc":true,"SendTcInfo":true,"SendContextInfo":true,"SendUserId":true,"SendUserName":true,"SendUserEmail":true,"SendLinkTitle":true,"SendLinkDescription":true,"SendD2LUserName":true,"SendD2LOrgDefinedId":true,"SendD2LOrgRoleId":true,"UseToolProviderSecuritySettings":true,"CustomParameters":null}'
+        for external tool","Key":"2015141297208","PlainSecret":"a30be7c3550149b7a7daac3065f0e5e5","IsVisible":false,"SignMessage":true,"SignWithTc":true,"SendTcInfo":true,"SendContextInfo":true,"SendUserId":true,"SendUserName":true,"SendUserEmail":true,"SendLinkTitle":true,"SendLinkDescription":true,"SendD2LUserName":true,"SendD2LOrgDefinedId":true,"SendD2LOrgRoleId":true,"UseToolProviderSecuritySettings":false,"CustomParameters":null}'
     headers:
       Accept:
       - "*/*"
@@ -17,7 +17,7 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '515'
+      - '516'
       Host:
       - partners.brightspace.com
   response:
@@ -50,22 +50,22 @@ http_interactions:
       X-Xss-Protection:
       - '0'
       Date:
-      - Fri, 07 Apr 2017 06:37:39 GMT
+      - Wed, 12 Apr 2017 01:30:46 GMT
       Content-Length:
-      - '416'
+      - '410'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3m
         kuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZk
         AWz2zkrayZ4hgKrIHz9+fB8/In7xR181+ZuqKl/W1WUxy+vX+XRdF+3167xt
-        i+VF89Gjtl7no4+et8XzYvn2bPbRo939/U/3D0YffVlffLUsWnx0sLO/O/ro
-        TdGW+UePPnr+5ixF449GH31Vl/TBvG1Xj+7eXVxnq1VZTLO2qJbjabW421LP
-        d8tsvZzOqfHTvJnWxQrf0kuAkJ5XdZq/a/N6mZUpWlOz3yu/pq/3dnbv7+7v
-        7j18sLdzQJ+eNT9ZNMUECJxnZUMovy4ull/kTZNd0GcyCnz03aKdv5naT/Ll
-        7M30bHleuffoo5Nq2VK/vc+JWjUG3PnoRbagPjofni6ygkbvfYohKZE6nwZD
-        9757uvccoHrw6XMi/9P8vFjmsw5C8t2rqsy9L07WTVstXmY1QSJy0rx+7/u/
-        5P8BCZdPIP4BAAA=
+        i+VF89Gj86xs8tFHz9viebF8ezb76NHu/v7De7ujj76sL75aFi0+OtjZpw/e
+        FG2Zf/Too+dvzlI0/mj00Vd1SR/M23b16O7dxXW2WpXFNGuLajmeVou7LXV9
+        t8zWy+mcGj/Nm2ldrPAtvQQI6XlVp/m7Nq+XWZmiNTX7vfJr+npvZ/f+7v7u
+        3sMHezsH9OlZ85NFU0yAgKL8urhYfpE3TXZBn7X1Wj/6btHO30ztJ/ly9mZ6
+        tjyv/E9OqmVL3XY/JmLVGG74yYts4TrQz04XWUEjdx9iNEqf8MNg0O6rp3vP
+        AacLmz4msj/Nz4tlPgtRka9eVWXuPj9ZN221eJnVBIaISNP5ve//kv8HjSKB
+        i/UBAAA=
     http_version: 
-  recorded_at: Fri, 07 Apr 2017 06:37:39 GMT
+  recorded_at: Wed, 12 Apr 2017 01:30:46 GMT
 recorded_with: VCR 3.0.3

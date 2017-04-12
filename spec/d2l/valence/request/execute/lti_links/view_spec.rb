@@ -20,13 +20,13 @@ describe D2L::Valence::Request, type: :service do
     context 'for GET a lti link', vcr: {cassette_name: 'request/execute/get_a_lti_link'} do
       let(:http_method) { 'GET' }
       let(:route) { '/d2l/api/le/:version/lti/link/:orgUnitId/:ltiLinkId' }
-      let(:route_params) { {orgUnitId: 8041, ltiLinkId: 144648} }
+      let(:route_params) { {orgUnitId: 8041, ltiLinkId: 12335} }
       let(:query_params) { {} }
       let(:api_version) { '1.15' }
       let(:response) { subject.execute }
 
       before do
-        Timecop.freeze Time.at(1491547536)
+        Timecop.freeze Time.at(1491961181)
       end
 
       after { Timecop.return }
