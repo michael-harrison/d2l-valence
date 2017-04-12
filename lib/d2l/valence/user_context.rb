@@ -10,6 +10,8 @@ module D2L
       attr_accessor :server_skew # in seconds
 
       # @param [D2L::Valence::AppContext] app_context
+      # @param [String] user_id User ID returned from the D2L Server in authentication process
+      # @param [String] user_key User Key returned the D2L Server in authentication process
       def initialize(app_context:, user_id:, user_key:)
         @app_context = app_context
         @user_id = user_id
