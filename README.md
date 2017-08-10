@@ -93,7 +93,7 @@ best store the `User ID` and `User Key` in the session to allow for multiple API
 
 
 #### Route Format
-When creating your request you will need to specify a `rout`.  The format of the `route` provided when doing a request 
+When creating your request you will need to specify a `route`.  The format of the `route` provided when doing a request 
 allows you to specify parameters that are replaced based on the `route_params` hash that you provide in the request 
 creation.  The only parameter that's pre-populated is the `version` which is based on the api_version you supply when 
 creating your application context.  It can, however be overridden when you supply your `route_params`.  Following are 
