@@ -28,13 +28,20 @@ Tool provided by D2L as the `Trusted URL`: https://apitesttool.desire2learnvalen
 
 Once generated the key will include an `Application ID` and `Application Key` which is used in the authentication request.
 
+### Brightspace host argument
+
+Methods that expect a Brightspace host argument are expecting an instance of the D2L::Valence::Host class, eg:
+
+```ruby
+brightspace_host = D2L::Valence::Host.new(scheme: 'https', host: 'partners.brightspace.com')  
+```
 
 ### Authentication URL
 To start the process of authentication you will need to generate an Authentication URL.
 
 ```ruby
 app_context = D2L::Valence::AppContext.new(
-  brightspace_host: 'partners.brightspace.com',
+  brightspace_host: brightspace_host,
   app_id: 'l3LcL9Lvpyg-ViYNbK',
   app_key: 'mz5HRx6ER6jLMqKRv6Fw',
   api_version: '1.15' # optional defaults to 1.0
@@ -64,7 +71,7 @@ the user context creation when processing the D2L Authentication response.
 
 ```ruby
 app_context = D2L::Valence::AppContext.new(
-  brightspace_host: 'partners.brightspace.com',
+  brightspace_host: brightspace_host,
   app_id: 'l3LcL9Lvpyg-ViYNbK',
   app_key: 'mz5HRx6ER6jLMqKRv6Fw',
   api_version: '1.15' # optional defaults to 1.0
