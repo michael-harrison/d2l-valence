@@ -1,4 +1,4 @@
-# D2l::Valence
+# D2L::Valence
 
 This gem is aimed at providing  a Ruby client for Desire2Learn's Valence Learning Framework APIs primarily 
 used for integration with D2L Brightspace
